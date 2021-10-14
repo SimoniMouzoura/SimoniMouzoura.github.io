@@ -1,60 +1,186 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 310,
+  "height": 300,
   "title": {
     "text": "Government Expenditure on education",
-    "subtitle":"as a % of total expenditure  Source:The World Bank",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":10,
+    "subtitle": "as a % of total expenditure  Source:The World Bank",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
     "anchor": "start",
     "color": "black"
   },
-  
-   "data": {
-    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/gvtexpenditure_chart5.csv",
-    "format": {"type": "csv"}
-  },
-
-   "transform":[
-      
-      {"filter": {
-        "field": "Country Name", 
-        "oneOf": ["Netherlands", "OECD members", "Spain", "Italy"]}
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/gvtexpenditure_chart5.csv",
+      "format": {
+        "type": "csv",
+        "parse": {"Country Name": "string", "Year": "date"},
+        "delimiter": ","
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indexof([\"Bahrain\",\"OECD members\",\"Brazil\",\"Africa Eastern and Southern\"], datum[\"Country Name\"]) !== -1"
         }
-
-
-    ],
-  
-  
-  "height": 300,
-  "width": 310,
-   
-  "mark": {"type": "line", "point": "true"},
- 
-  "encoding": {
-
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-              "title": null,
-      "axis": {"grid": false}
+      ]
     },
-
-    "y": {
-      "field": "Government expenditure on education",
-      "type": "quantitative",
-              "title": null,
-      "axis": {"grid": true}
-    },
-
-    "color": {
-      "field": "Country Name",
-      "type": "nominal",
-      "scale": {"scheme": "paired"},
-      "title": "",
-      "legend": {
-        "orient": "bottom-right", 
-        "fillColor": "#fffffff3"}
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(isDate(datum[\"Year\"]) || (isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]))) && isValid(datum[\"Government expenditure on education\"]) && isFinite(+datum[\"Government expenditure on education\"])"
+        }
+      ]
     }
-}
+  ],
+  "marks": [
+    {
+      "name": "layer_0_pathgroup",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "faceted_path_layer_0_main",
+          "data": "source_0",
+          "groupby": ["Country Name"]
+        }
+      },
+      "encode": {
+        "update": {
+          "width": {"field": {"group": "width"}},
+          "height": {"field": {"group": "height"}}
+        }
+      },
+      "marks": [
+        {
+          "name": "layer_0_marks",
+          "type": "line",
+          "style": ["line"],
+          "sort": {"field": "datum[\"Year\"]"},
+          "from": {"data": "faceted_path_layer_0_main"},
+          "encode": {
+            "update": {
+              "stroke": {"scale": "color", "field": "Country Name"},
+              "description": {
+                "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Government expenditure on education: \" + (format(datum[\"Government expenditure on education\"], \"\")) + \"; Country Name: \" + (isValid(datum[\"Country Name\"]) ? datum[\"Country Name\"] : \"\"+datum[\"Country Name\"])"
+              },
+              "x": {"scale": "x", "field": "Year"},
+              "y": {
+                "scale": "y",
+                "field": "Government expenditure on education"
+              },
+              "defined": {
+                "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Government expenditure on education\"]) && isFinite(+datum[\"Government expenditure on education\"])"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["point"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "fill": {"scale": "color", "field": "Country Name"},
+          "ariaRoleDescription": {"value": "point"},
+          "description": {
+            "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Government expenditure on education: \" + (format(datum[\"Government expenditure on education\"], \"\")) + \"; Country Name: \" + (isValid(datum[\"Country Name\"]) ? datum[\"Country Name\"] : \"\"+datum[\"Country Name\"])"
+          },
+          "x": {"scale": "x", "field": "Year"},
+          "y": {"scale": "y", "field": "Government expenditure on education"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "Year"},
+          {"data": "data_0", "field": "Year"}
+        ]
+      },
+      "range": [0, {"signal": "width"}]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "Government expenditure on education"},
+          {"data": "data_0", "field": "Government expenditure on education"}
+        ]
+      },
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "Country Name"},
+          {"data": "data_0", "field": "Country Name"}
+        ],
+        "sort": true
+      },
+      "range": {"scheme": "paired"}
+    }
+  ],
+  "axes": [
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": true,
+      "gridScale": "x",
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "fillColor": "#fffffff3",
+      "orient": "bottom-left",
+      "stroke": "color",
+      "symbolType": "circle",
+      "fill": "color",
+      "encode": {"symbols": {"update": {"opacity": {"value": 1}}}}
+    }
+  ]
 }
