@@ -31,10 +31,59 @@ p{
 
 .chart{
     background-color: white;
-    width:330px;
-    border-width: 10px;
+    width: 230px;
+    border-width: 5px;
     border-style: solid;
     border-radius: 5px;
     border-color: white;
 }
+
+
+
+
+/* Button style */
+container {
+	align-content: center;
+	justify-content: center
+}
+
+.button {
+	align-content: center;
+	border-radius: 40px;
+	background-color: #9c693f;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	padding: 20px;
+	width: 100px;
+	transition: all 2s;
+	cursor: pointer;
+	margin: 5px;
+  }
+
+  .button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: .5s;
+  }
+  
+  .button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: .5s;
+  }
+  
+  .button:hover span {
+	padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
 
