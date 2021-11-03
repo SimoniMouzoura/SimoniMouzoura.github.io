@@ -30,22 +30,19 @@ p{
 }
 
 .chart{
-    background-color: white;
-    width: 230px;
-    border-width: 5px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: white;
+		border-style: solid;
+		border-width: 2px;
+		margin-left: 5px;
+		border-radius: 5px;
+		padding: 5px;
+		border-color: rgba(201, 176, 156, 0.836);
+		background-color: white;
 }
-
 
 
 
 /* Button style */
-container {
-	align-content: center;
-	justify-content: center
-}
+
 
 .button {
 	align-content: center;
