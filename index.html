@@ -45,79 +45,82 @@
     
     
 
-<container class='week1'>
-<!--Chart 1 -->
-<h4>Covid-19</h4>
-<p>Here is my first interactive chart which looks at Covid-19 cases in UK regions.</p>
-  <div class="chart" id="chart1">
-      <script>
-        var myChart1 = "chart1_covidUKRegions.json";
-        vegaEmbed('#chart1', myChart1);
-      </script>
-  </div>
-    
 
-<!--Chart 2 -->
-<h4>U.K Productivity</h4>
-<p>This line-chart displays the pattern of UK labour productivity over the past few years.</p>
+ <!--Chart 1 -->
+ <h4>Covid-19</h4>
+ <p>Here is my first interactive chart which looks at Covid-19 cases in UK regions.</p>
+   <div class="chart" id="chart1">
+       <script>
+         var myChart1 = "chart1_covidUKRegions.json";
+         vegaEmbed('#chart1', myChart1);
+       </script>
+   </div>
+     
+ 
+ <!--Chart 2 -->
+ <h4>U.K Productivity</h4>
+ <p>This line-chart displays the pattern of UK labour productivity over the past few years.</p>
+ 
+ <div class="chart" id="chart2">
+     <script>
+       var myChart2 = "chart2_ukProductivity.json";
+       vegaEmbed('#chart2', myChart2);
+     </script>
+ </div>
+ 
+ <!--Chart 3 -->
+ <h4>Green Party Representation</h4>
+ <p>This bar-chart shows the share of seats won in the European parliament by green parties since 1984.</p>
+ <div class="chart" id="chart3">
+   <script>
+     var myChart3 = "chart3.json";
+     vegaEmbed('#chart3', myChart3);
+   </script>
+ </div>
+ 
 
-<div class="chart" id="chart2">
+ <!--Chart 4-->
+  <h4>New Covid cases</h4>
+  <p>This chart uses API from the ONS website to show the number of new cases in East Devon, Manchester and Glasgow City.</p>
+  <div class="chart" id="chart4">
     <script>
-      var myChart2 = "chart2_ukProductivity.json";
-      vegaEmbed('#chart2', myChart2);
+      var myChart4 = "chart4_covidcases.json";
+      vegaEmbed('#chart4', myChart4);
     </script>
-</div>
+  </div>
+  
+  <!--Chart 5 -->
+  <h4>Government Expenditure on Education</h4>
+  <p>This is an example of a chart using raw, showing the proportion of expenditure on education out of total government expenditure in the following countries. </p>
+  <div class="chart" id="chart5">
+    <script>
+      var myChart5 = "chart5_gvtexp.json";
+      vegaEmbed('#chart5', myChart5);
+    </script>
+  </div>
 
-<!--Chart 3 -->
-<h4>Green Party Representation</h4>
-<p>This bar-chart shows the share of seats won in the European parliament by green parties since 1984.</p>
-<div class="chart" id="chart3">
-  <script>
-    var myChart3 = "chart3.json";
-    vegaEmbed('#chart3', myChart3);
-  </script>
-</div>
 
 
-<!--Chart 4-->
-<h4>New Covid cases</h4>
-<p>This chart uses API from the ONS website to show the number of new cases in East Devon, Manchester and Glasgow City.</p>
-<div class="chart" id="chart4">
-  <script>
-    var myChart4 = "chart4_covidcases.json";
-    vegaEmbed('#chart4', myChart4);
-  </script>
-</div>
-
-<!--Chart 5 -->
-<h4>Government Expenditure on Education</h4>
-<p>This is an example of a chart using raw, showing the proportion of expenditure on education out of total government expenditure in the following countries. </p>
-<div class="chart" id="chart5">
-  <script>
-    var myChart5 = "chart5_gvtexp.json";
-    vegaEmbed('#chart5', myChart5);
-  </script>
-</div>
 
 <!--Chart 6 -->
-<h4>GDP per capita in the last 5 years</h4>
-<p>Calculated using 2 different CSV files, total population and total GDP.Added the observation of GDP per capita. Source: OECD </p>
-<div class="chart" id="chart6">
-  <script>
-    var myChart6 = "chart6_gdppercapita.json";
-    vegaEmbed('#chart6', myChart6);
-  </script>
-</div>
-
-<!--Chart 7 -->
-<h4>U.K beach litter</h4>
-<p> This chart uses "in-line" data that I have written for the json file. </p>
-<div class="chart" id="chart7">
-  <script>
-    var myChart7 = "chart7_uklitter.json";
-    vegaEmbed('#chart7', myChart7);
-  </script>
-</div>
+  <h4>GDP per capita in the last 5 years</h4>
+  <p>Calculated using 2 different CSV files, total population and total GDP.Added the observation of GDP per capita. Source: OECD </p>
+  <div class="chart" id="chart6">
+    <script>
+      var myChart6 = "chart6_gdppercapita.json";
+      vegaEmbed('#chart6', myChart6);
+    </script>
+  </div>
+  
+  <!--Chart 7 -->
+  <h4>U.K beach litter</h4>
+  <p> This chart uses "in-line" data that I have written for the json file. </p>
+  <div class="chart" id="chart7">
+    <script>
+      var myChart7 = "chart7_uklitter.json";
+      vegaEmbed('#chart7', myChart7);
+    </script>
+  </div>
 
       
 <!--Chart 8 -->
