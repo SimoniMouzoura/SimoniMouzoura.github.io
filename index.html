@@ -143,6 +143,50 @@
   </script>
 </div>
 </body>
+
+<p>The Following section (Week 5) shows 4 charts that have been chreated using API from FRED. I created a loop using Google Collab, to make 4 calls to the API, returning 4 data files that I saved locally, while using my own API key from FRED. I then uploaded the data files to GitHub and used the RAW version to create my charts.</p>
+
+<!--Chart 10 -->
+<h4>US Government Expenditure on education</h4>
+<div class="chart" id="chart10">
+  <script>
+    var myChart10 = "fred_dataeducation.json";
+    vegaEmbed('#chart10', myChart10);
+  </script>
+</div>
+</body>
+
+<!--Chart 11 -->
+<h4>US Government Current Expenditure</h4>
+<div class="chart" id="chart11">
+  <script>
+    var myChart11 = "fred_datacurrentexp.json";
+    vegaEmbed('#chart11', myChart11);
+  </script>
+</div>
+</body>
+
+<!--Chart 12 -->
+<h4>US Expenditure on Interest Payments</h4>
+<div class="chart" id="chart12">
+  <script>
+    var myChart12 = "fred_datainterestpayments.json";
+    vegaEmbed('#chart12', myChart12);
+  </script>
+</div>
+</body>
+
+<!--Chart 13 -->
+<h4>US Expenditure on Public Safety</h4>
+<div class="chart" id="chart13">
+  <script>
+    var myChart13 = "fred_datapublicsafety.json";
+    vegaEmbed('#chart13', myChart13);
+  </script>
+</div>
+</body>
+
+
 <!-- ///////////////////  END BODY //////////////////////////////////// -->
 
 </html>
