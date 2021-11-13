@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "US Gross Domestic Product",
+  "title": {
+    "text": "US Government Total Expenditures",
+    "subtitle": "Billions of Dollars - Seasonally Adjusted. Source: FRED",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/week5_gvtexpenditure-W068RCQ027SBEA.json",
+    "format": {"type": "json", "property": "observations"}
+  },
+  "height": 300,
+  "width": 400,
+  "mark": {
+    "type": "line",
+    "clip": true,
+    "point": "transparent",
+    "color": "#166103cb"
+  },
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "scale": {"domain": [{"year": 2000}, {"year": 2022}]},
+      "field": "date",
+      "type": "temporal",
+      "axis": {"title": null, "grid": false, "labelSeparation": 10}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "",
+      "scale": {"domain": [2000, 12000]},
+      "axis": {"grid": true, "format": "$.2s"}
+    }
+  },
+  "config": {}
+}
