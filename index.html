@@ -45,61 +45,62 @@
     
     
 
+<!--Chart 1 -->
+<h4>Covid-19</h4>
+<p>Here is my first interactive chart which looks at Covid-19 cases in UK regions.</p>
+  <div class="chart" id="chart1">
+      <script>
+        var myChart1 = "chart1_covidUKRegions.json";
+        vegaEmbed('#chart1', myChart1);
+      </script>
+  </div>
+    
 
- <!--Chart 1 -->
- <h4>Covid-19</h4>
- <p>Here is my first interactive chart which looks at Covid-19 cases in UK regions.</p>
-   <div class="chart" id="chart1">
-       <script>
-         var myChart1 = "chart1_covidUKRegions.json";
-         vegaEmbed('#chart1', myChart1);
-       </script>
-   </div>
-     
- 
- <!--Chart 2 -->
- <h4>U.K Productivity</h4>
- <p>This line-chart displays the pattern of UK labour productivity over the past few years.</p>
- 
- <div class="chart" id="chart2">
-     <script>
-       var myChart2 = "chart2_ukProductivity.json";
-       vegaEmbed('#chart2', myChart2);
-     </script>
- </div>
- 
- <!--Chart 3 -->
- <h4>Green Party Representation</h4>
- <p>This bar-chart shows the share of seats won in the European parliament by green parties since 1984.</p>
- <div class="chart" id="chart3">
-   <script>
-     var myChart3 = "chart3.json";
-     vegaEmbed('#chart3', myChart3);
-   </script>
- </div>
- 
+<!--Chart 2 -->
+<h4>U.K Productivity</h4>
+<p>This line-chart displays the pattern of UK labour productivity over the past few years.</p>
 
- <!--Chart 4-->
-  <h4>New Covid cases</h4>
-  <p>This chart uses API from the ONS website to show the number of new cases in East Devon, Manchester and Glasgow City.</p>
-  <div class="chart" id="chart4">
+<div class="chart" id="chart2">
+    <script>
+      var myChart2 = "chart2_ukProductivity.json";
+      vegaEmbed('#chart2', myChart2);
+    </script>
+</div>
+
+<!--Chart 3 -->
+<h4>Green Party Representation</h4>
+<p>This bar-chart shows the share of seats won in the European parliament by green parties since 1984.</p>
+<div class="chart" id="chart3">
   <script>
-    var myChart5 = "chart4_covidcases.json";
+    var myChart3 = "chart3.json";
+    vegaEmbed('#chart3', myChart3);
+  </script>
+</div>
+
+
+
+ 
+<!--Chart 4-->
+<h4>New Covid cases</h4>
+<p>This chart uses API from the ONS website to show the number of new cases in East Devon, Manchester and Glasgow City.</p>
+<div class="chart" id="chart4">
+  <script>
+    var myChart4 = "chart4_covidcases.json";
     vegaEmbed('#chart4', myChart4);
   </script>
 </div>
- 
-  
-  <!--Chart 5 -->
-  <h4>Government Expenditure on Education</h4>
-  <p>This is an example of a chart using raw, showing the proportion of expenditure on education out of total government expenditure in the following countries. </p>
-  <div class="chart" id="chart5">
-    <script>
-      var myChart5 = "chart5_gvtexp.json";
-      vegaEmbed('#chart5', myChart5);
-    </script>
-  </div>
 
+<!--Chart 5 -->
+<h4>Government Expenditure on Education</h4>
+<p>This is an example of a chart using raw, showing the proportion of expenditure on education out of total government expenditure in the following countries. </p>
+<div class="chart" id="chart5">
+  <script>
+    var myChart5 = "chart5_gvtexp.json";
+    vegaEmbed('#chart5', myChart5);
+  </script>
+</div>
+
+ 
 
 <!--Chart 6 -->
   <h4>GDP per capita in the last 5 years</h4>
@@ -143,7 +144,7 @@
 </div>
 </body>
 
-<p>The Following section (Week 5) shows 4 charts that have been chreated using API from FRED. I created a loop using Google Collab, to make 4 calls to the API, returning 4 data files that I saved locally, while using my own API key from FRED. I then uploaded the data files to GitHub and used the RAW version to create my charts.</p>
+<p>The Following section (Week 5) shows 4 charts that have been created using API from FRED. I created a loop using Google Collab, to make 4 calls to the API, returning 4 data files that I saved locally, while using my own API key from FRED. I then uploaded the data files to GitHub and used the RAW version to create my charts.</p>
 
 <!--Chart 10 -->
 <h4>US Government Expenditure on education</h4>
@@ -185,14 +186,24 @@
 </div>
 </body>
 
-
 <!--Chart 14 -->
-<h4> Week 8 - Talking Economics </h4>
-<p>During one of the "Talking Economics" sessions, Abi Adams Prassl stated that prior to the COVID19 lockdown "U.K had record high employment". Using data from the ONS, I created a chart showing that just before lockdown was imposed in February 2020, UK employment was estimated at record high levels of 76.6%.</p>
+<h5>Week 8 - Talking Economics</h5>
+<h4>During one of the "Talking Economics" sessions, Abi Adams Prassl stated that prior to the COVID19 lockdown "U.K had record high employment". Using data from the ONS, I created a chart showing that just before lockdown was imposed in February 2020, UK employment was estimated at record high levels of 76.6%.</h4>
 <div class="chart" id="chart14">
   <script>
     var myChart14 = "ukemploymentchart14.json";
     vegaEmbed('#chart14', myChart14);
+  </script>
+</div>
+</body>
+
+<!--Chart 15-->
+<h5>Week 7 - Scraping data </h5>
+<h4>this chart was produced by doing light scraping on the numbeo website, regarding quality of life data in Africa.</h4>
+<div class="chart" id="chart15">
+  <script>
+    var myChart15 = "chart15_qualityoflife.json";
+    vegaEmbed('#chart15', myChart15);
   </script>
 </div>
 </body>
