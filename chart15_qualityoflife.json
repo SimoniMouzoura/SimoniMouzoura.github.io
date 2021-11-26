@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Quality of Life index in Africa",
+    "subtitle": "mid-year 2021 Source: Numbeo",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/qualityoflife_index.csv"
+  },
+  "height": 300,
+  "width": 260,
+  "mark": {"type": "bar", "clip": true, "color": "#d87b11"},
+  "encoding": {
+    "x": {
+      "field": "City",
+      "type": "nominal",
+      "axis": {"title": null, "grid": false, "ticks": false, "labelAngle": 37}
+    },
+    "y": {
+      "field": "Quality of Life Index",
+      "type": "quantitative",
+      "title": "Index",
+      "axis": {"grid": false}
+    }
+  },
+  "config": {}
+}
