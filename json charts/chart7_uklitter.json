@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "SAS litter",
+    "title": {
+      "text": "UK beach litter - by brand",
+      "subtitle": "Share of litter found on the beach",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "values": [
+        {"Brand": "Heineken", "share of litter": 4},
+        {"Brand": "Pepsi", "share of litter": 9},
+        {"Brand": "Aldi", "share of litter": 2},
+        {"Brand": "Mcdonalds", "share of litter": 5},
+        {"Brand": "Carlsberg Group", "share of litter": 3},
+        {"Brand": "Tesco", "share of litter": 4}
+      ]
+    },
+    "mark": {"type": "bar", "color": "#e7bd31a4", "strokeWidth": 2, "opacity": 1},
+    "height": 300,
+    "width": 350,
+    "encoding": {
+      "x": {"field": "Brand", "type": "nominal", "axis": {"labelAngle": 0}},
+      "y": {"field": "share of litter", "type": "quantitative"}
+    },
+    "config": {}
+  }

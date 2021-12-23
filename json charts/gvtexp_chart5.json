@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Government Expenditure on education",
+    "subtitle": "as a % of total expenditure  Source:The World Bank",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/gvtexpenditure_chart5.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Country Name",
+        "oneOf": ["Netherlands", "OECD members", "Spain", "Italy"]
+      }
+    }
+  ],
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "line", "point": "true"},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Government expenditure on education",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": true}
+    },
+    "color": {
+      "field": "Country Name",
+      "type": "nominal",
+      "scale": {"scheme": "paired"},
+      "title": "",
+      "legend": {"orient": "bottom-right", "fillColor": "#fffffff3"}
+    }
+  },
+  "config": {}
+}
