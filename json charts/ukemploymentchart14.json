@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "UK Employment rate 2000-2020",
+    "subtitle": "Source : ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/ukempl.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 300,
+  "mark": {
+    "type": "line",
+    "color": "purple",
+    "clip": true,
+    "point": false,
+    "strokeWidth": 2,
+    "opacity": 2.2
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": true}
+    },
+    "y": {
+      "field": "Employment Rate",
+      "type": "quantitative",
+      "title": "Employment rate %",
+      "axis": {"grid": true},
+      "scale": {"domain": [66, 78]}
+    }
+  },
+  "config": {}
+}
