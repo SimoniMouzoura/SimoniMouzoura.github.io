@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "U.S population with tertiary education",
+    "subtitle": "25-34 year-olds. Source: OECD ",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "name": "myData",
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/chart%2016.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {
+    "type": "line",
+    "color": "#067988",
+    "strokeWidth": 3,
+    "clip": true,
+    "opacity": 1
+  },
+  "transform": [
+    {"calculate": "timeParse(datum.TIME, '%d/%m/%Y')", "as": "date"},
+    {"calculate": "year(datum.TIME)", "as": "year"},
+    {"filter": "datum.year>=minYear"},
+    {"filter": "datum.year<=maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1981,
+      "bind": {
+        "input": "range",
+        "min": 1981,
+        "max": 2020,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 1981,
+        "max": 2020,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "TIME",
+      "type": "temporal",
+      "axis": {"grid": false},
+      "title": null
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "% in same age group",
+      "axis": {"grid": true},
+      "scale": {"domain": [20, 55]}
+    }
+  },
+  "config": {}
+}
