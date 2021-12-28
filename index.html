@@ -44,9 +44,9 @@
     <p><strong>Simoni Mouzoura</strong></p>
     
     
-
+<h4>Week 1: Embedding</h4>
 <!--Chart 1 -->
-<h4>Covid-19</h4>
+
 <p>Here is my first interactive chart which looks at Covid-19 cases in UK regions.</p>
   <div class="chart" id="chart1">
       <script>
@@ -77,13 +77,16 @@
   </script>
 </div>
 
+<h4>Week 2: Hosting Data</h4>
 
-
- 
 <!--Chart 4-->
-<h4>New Covid cases</h4>
-<p>This chart uses API from the ONS website to show the number of new cases in East Devon, Manchester and Glasgow City.</p>
-
+<p>This chart uses API to show the number of new cases in East Devon, Belfast and Glasgow City.</p>
+<div class="chart" id="chart4">
+  <script>
+    var myChart4 = "chart4_covidcasesapi.json";
+    vegaEmbed('#chart4', myChart4);
+  </script>
+</div>
 
 <!--Chart 5 -->
 <h4>Government Expenditure on Education</h4>
@@ -95,7 +98,7 @@
   </script>
 </div>
 
- 
+<h4>Week 3: Editing Data</h4>
 
 <!--Chart 6 -->
   <h4>GDP per capita in the last 5 years</h4>
@@ -109,7 +112,7 @@
   
   <!--Chart 7 -->
   <h4>U.K beach litter</h4>
-  <p> This chart uses "in-line" data that I have written for the json file. </p>
+  <p> This chart uses "in-line" JSON list as its data source. </p>
   <div class="chart" id="chart7">
     <script>
       var myChart7 = "chart7_uklitter.json";
@@ -117,7 +120,7 @@
     </script>
   </div>
 
-      
+<h4>Week 4: API driven charts</h4>     
 <!--Chart 8 -->
 <h4>Cryptocurrency</h4>
 <p> To create this chart I signed up on the "Coin API" website and gained access to an API that provided data for current USD AND EOS rates. </p>
@@ -139,10 +142,11 @@
 </div>
 </body>
 
-<p>The Following section (Week 5) shows 4 charts that have been created using API from FRED. I created a loop using Google Collab, to make 4 calls to the API, returning 4 data files that I saved locally, while using my own API key from FRED. I then uploaded the data files to GitHub and used the RAW version to create my charts.</p>
+<h4>Week 5: APIs and loops</h4>
 
 <!--Chart 10 -->
-<h4>US Government Expenditure on education</h4>
+<p>The Following section shows 4 charts that have been created using API from FRED. I created a loop using Google Collab, to make 4 calls to the API, returning 4 data files that I saved locally, while using my own API key from FRED. I then uploaded the data files to GitHub and used the RAW version to create my charts.</p>
+<p>US Government Expenditure on education</p>
 <div class="chart" id="chart10">
   <script>
     var myChart10 = "fred_dataeducation.json";
@@ -180,9 +184,10 @@
   </script>
 </div>
 </body>
-
+<h4>Week 6: Reading week, no additional tasks</h4>
+<h4>Week 7: Scraping Data</h4>
 <!--Chart 15-->
-<h4>Week 7 - Scraping data </h4>
+
 <p>this chart was produced by doing light scraping on the numbeo website, regarding quality of life data in Africa.</p>
 <div class="chart" id="chart15">
   <script>
@@ -193,7 +198,7 @@
 </body>
 
 <!--Chart 14 -->
-<h4>Week 8 - Talking Economics</h4>
+<h4>Week 8: Data Stories</h4>
 <p>During one of the "Talking Economics" sessions, Abi Adams Prassl stated that prior to the COVID19 lockdown "U.K had record high employment". Using data from the ONS, I created a chart showing that just before lockdown was imposed in February 2020, UK employment was estimated at record high levels of 76.6%.</p>
 <div class="chart" id="chart14">
   <script>
@@ -203,9 +208,11 @@
 </div>
 </body>
 
+<h4>Week 9: Advanced Analytics</h4>
+
 <!--Chart 16-->
-<h4>Embedding two interactive charts</h4>
-<p>the first chart looks at 25-34 year olds in the United states that have tertiary education.</p>
+<h4>Week 10: Interactivity</h4>
+<p>Embedding two interactive charts. The first chart looks at 25-34 year olds in the United states that have tertiary education.</p>
 <div class="chart" id="chart16">
   <script>
     var myChart16 = "chart16_tertiaryeducation.json";
@@ -213,7 +220,6 @@
   </script>
 </div>
 </body>
-
 <!--Chart 17-->
 <div class="chart" id="chart17">
   <script>
