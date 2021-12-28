@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "COVID-19 Cases around the U.K ",
+    "subtitle": "New cases by publish date, rolling rate sum Source: gov.uk",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=newCasesByPublishDateRollingSum&format=csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "areaName",
+        "oneOf": ["East Devon", "Glasgow City", "Belfast"]
+      }
+    }
+  ],
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "line", "clip": true, "point": false},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "newCasesByPublishDateRollingSum",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": true}
+    },
+    "color": {
+      "field": "areaName",
+      "type": "nominal",
+      "scale": {"scheme": "plasma"},
+      "title": null,
+      "legend": {"orient": "top-left", "fillColor": "#ffffff"}
+    }
+  },
+  "config": {}
+}
