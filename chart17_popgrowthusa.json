@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "USA population growth",
+    "subtitle": "Source: Fred ",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/chart17_popgrowthusa.csv"
+  },
+  "vconcat": [
+    {
+      "width": 480,
+      "mark": {
+        "type": "line",
+        "clip": true,
+        "point": false,
+        "color": "#1be0cfcb"
+      },
+      "transform": [{"calculate": "year(datum.Date)", "as": "year"}],
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": ""}
+        },
+        "y": {
+          "field": "pop_growth",
+          "scale": {"domain": [0, 2]},
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "width": 480,
+      "height": 60,
+      "mark": {
+        "type": "area",
+        "clip": true,
+        "point": false,
+        "color": "#abe01bcb"
+      },
+      "transform": [{"calculate": "year(datum.Date)", "as": "year"}],
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {"field": "Date", "type": "temporal"},
+        "y": {
+          "field": "pop_growth",
+          "type": "quantitative",
+          "scale": {"domain": [0, 2]},
+          "axis": {"tickCount": 3, "grid": false}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
