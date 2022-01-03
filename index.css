@@ -5,33 +5,33 @@
 /* This is my first proper css file */
 
 body{
-    background-color: rgba(201, 176, 156, 0.836);
+    background-color:rgb(253, 242, 252);
     max-width: 450px;
     margin:auto
 }
 
 h1{
-    color:rgba(82, 56, 22, 0.904);
+    color:rgb(66, 31, 75);
     font-family: 'Lato', sans-serif ;
 
 } 
 h3{
-    color:rgb(110, 64, 16);
+    color:rgb(66, 31, 75);
     font-family: 'Lato', sans-serif ;
 } 
 h4{
-    color:rgb(131, 79, 1);
+    color:rgb(60, 33, 66);
     font-family: 'Lato' , sans-serif ;
 	font-size: 25px;
 }
 
 h5{ 
-	color: rgb(219, 205, 184);
+	color: rgb(124, 81, 134);
 	font-family: 'Lato' , sans-serif;
 	
 }
 p{
-    color:rgb(255, 255, 255);
+    color:rgb(84, 42, 95);
     font-family: 'Lato', sans-serif ;
 }
 
@@ -60,7 +60,7 @@ p{
 .button {
 	align-content: center;
 	border-radius: 40px;
-	background-color: #9c693f;
+	background-color: #ca7ab2;
 	border: none;
 	color: #FFFFFF;
 	text-align: center;
