@@ -1,37 +1,40 @@
 
-/*Simoni Mouzoura*/
+/*Simoni Mouzoura
+
 
 /* This is my first proper css file */
 
 body{
     background-color:rgb(253, 242, 252);
     max-width: 450px;
+	font-family: 'Montserrat', sans-serif;
     margin:auto
+	
 }
 
 h1{
     color:rgb(66, 31, 75);
-    font-family: 'Lato', sans-serif ;
+    font-family: 'Montserrat', sans-serif ;
 
 } 
 h3{
     color:rgb(66, 31, 75);
-    font-family: 'Lato', sans-serif ;
+    font-family: 'Montserrat', sans-serif ;
 } 
 h4{
     color:rgb(60, 33, 66);
-    font-family: 'Lato' , sans-serif ;
+    font-family: 'Montserrat' , sans-serif ;
 	font-size: 25px;
 }
 
 h5{ 
 	color: rgb(124, 81, 134);
-	font-family: 'Lato' , sans-serif;
+	font-family: 'Montserrat' , sans-serif;
 	
 }
 p{
     color:rgb(84, 42, 95);
-    font-family: 'Lato', sans-serif ;
+    font-family: 'Montserrat ', sans-serif ;
 }
 
 .chart{
@@ -59,6 +62,7 @@ p{
 .button {
 	align-content: center;
 	border-radius: 40px;
+	font-family: 'Montserrat', sans-serif ;
 	background-color: #ca7ab2;
 	border: none;
 	color: #FFFFFF;
