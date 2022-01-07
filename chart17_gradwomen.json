@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Graduation rate",
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/chart17_gradratewomen.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": "Tertiary graduation rate in women",
+    "subtitle": "percentage,women Source: OECD",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black",
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 280,
+  "background": "white",
+  "mark": {"type": "line", "width": 10, "clip": true},
+  "selection": {
+    "Region": {
+      "type": "single",
+      "fields": ["LOCATION"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "AUS",
+          "AUT",
+          "CHE",
+          "CZE",
+          "FIN",
+          "GBR",
+          "ISL",
+          "LUX",
+          "NLD",
+          "NOR",
+          "NZL",
+          "PRT",
+          "SVN",
+          "SWE",
+          "DNK"
+        ],
+        "labels": ["All"],
+        "name": "Country"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "Region"}}],
+  "encoding": {
+    "x": {
+      "field": "TIME",
+      "type": "temporal",
+      "title": "",
+      "axis": {"grid": true, "gridColor": "darkgrey"}
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": false, "gridColor": "darkgrey"},
+      "scale": {"domain": [0, 70]}
+    },
+    "color": {
+      "field": "LOCATION",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
+    "tooltip": [{"field": "LOCATION"}, {"field": "Value"}]
+  },
+  "config": {}
+}
