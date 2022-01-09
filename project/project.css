@@ -59,9 +59,10 @@ right: 0px;
     
     h2{
     
-      color: rgb(59, 60, 61);
-      margin-top: -20px !important;
-      font-size: 18px !important;
+      color: rgb(122, 16, 96);
+      margin-top: 20px !important;
+      font-size: 23px !important;
+      font-weight: bold;
       font-family: 'Montserrat', sans-serif !important;
     }
 
