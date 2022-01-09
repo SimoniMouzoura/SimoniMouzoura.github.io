@@ -2,7 +2,6 @@
 
 <!-- Simoni Mouzoura, Data Science 2021 -->
 
-
 <!-- ///////////////////  HEAD //////////////////////////////////// -->
 
 <head>
@@ -17,7 +16,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-
         <!--The next lines allow the Vega embed-->
 <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
@@ -26,41 +24,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5.2.0"></script>    
 
-
 <head>
   <style>
-     <div id="loader">
-  <div id="one"></div>
-  <div id="two"></div>
-</div>
-
-<div id="loadermessage">Loading page...</div>
-
-</head>
-
-<body onload="myFunction()" style="margin:0;">
-
-<div id="loader"></div>
-
-<div style="display:none;" id="myDiv" class="animate-bottom">
-
-  <script>
-    var myVar;
-    
-    function myFunction() {
-      myVar = setTimeout(showPage, 3000);
-    }
-    
-    function showPage() {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("loadermessage").style.display = "none";
-      document.getElementById("myDiv").style.display = "block";
-    }
-    </script>
-
-
-
-<body>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
     
     body {
@@ -175,31 +140,31 @@
   </container>
 
 
-<!--Chart 5-->
+
 <container>
+  <container class="hcontainer">
+<!--Chart 5-->
 <div class="chart" id="chart5">
   <script>
     var myChart5 = "chart5_religionmajorcities.json";
     vegaEmbed('#chart5', myChart5);
     </script>
    </div>
-    
-  </container>
-    
   <p>Another measure of diversity, apart from the age profile and ethnicity, is religion.
-     It is clear that the majority either believe in christianity or no religion at all.
-     For the creation of this chart i had to manipulate the data in order to be able to portray the information in this visualisation. 
-     This is because the information in the csv file was read as "string". 
-     I managed to transform it to "float" in python and thus be able to create this chart. The file can be found as a colab notebook </p>
+     It is clear that the majority either believe in christianity or no religion at all. Some manipulation of data in python.
+   The file can be found as a colab notebook </p>
      <a class="textLink"
      href="https://github.com/SimoniMouzoura/SimoniMouzoura.github.io/blob/main/project/data_chart5.ipynb"
-     style="color:rgb(124, 81, 134);">here</a></p>
+     style="color:rgb(124, 81, 134);">here</a></p>  
+    </container>
+   
+
 
 <container>
-     <p class="bodyText"><span style="color: rgb(49, 6, 40); font-weight: 700; font: size 40px;">Conclusion</p>
+  <container class="hcontainer">
+     <p class="bodyText"><span style="color: rgb(49, 6, 40); font-weight: 700; font: size 40px;">Conclusion and Limitations</p>
       
 <!--Chart 6-->
-
 <div class="chart" id="chart6">
   <script>
     var myChart6 = "chart6_regression.json";
@@ -209,12 +174,15 @@
 
    <p>By doing this regression we can observe that only 3% of the variation in school enrollment can be explained by spending on education by the government. This means that
      an increase in expenditure on education will only affect school enrollment in a very small way. Seeing as this is the case it might be wiser to find other ways to increase school enrollment or spend
-     the amount on education in more effective ways. Such results may demonstrate that more needs to be invested in the education sector, or that the money spend on education is not being used effectively. At the same time there can be
-    countless other variables not included in the regression that may affect this relationship. The aim of this project is not to establish causation
+     the amount on education in more effective ways. Such results may demonstrate that more needs to be invested in the education sector, or that the money spend on education is not being used effectively.
+      At the same time there can be countless other variables not included in the regression that may affect this relationship. The aim of this project is not to establish causation
     but to merely check if a correlation exists. In this case a relationship between these 2 variable does exist but
-  seems to be weak.   </p>
-            
-  </container>
+  seems to be weak. Some limitations i experienced include the fact that the U.K government collects data using the census method. In this case they
+do a census every 10 years and collect data on the population and update it accordingly. For this reason it is not possible to show the year-to-year
+changes of the diversity of the country. Therefore i focused on the 2011 census and collected most data from a specific source so a to be as accurate
+as possible. Another limitation was that to create the 5th chart I had to manipulate the data in order to be able to portray the information in this visualisation. 
+This is because the information in the csv file was read as "string".I managed to transform it to "float" in python and thus be able to create this chart. </p>
+</container>          
 
      
    </html>
