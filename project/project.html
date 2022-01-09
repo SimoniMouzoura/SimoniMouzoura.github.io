@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<!-- Simoni Mouzoura, Data Science 2021 -->
+
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +14,6 @@
     <title>Simoni Mouzoura</title>
 
     <link rel="stylesheet" href= "project.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -19,75 +25,161 @@
 <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5.2.0"></script>    
-   
+
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
     
-    <!--Favicon-->
-<link rel="icon" href="icon.png">
-
-
-
-</head>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
-body {
-  margin: 0;
-  text-align: center !important;
-}
-
-</style>
-
-<div id="loader">
-  <div id="one"></div>
-  <div id="two"></div>
-</div>
-
-<div id="loadermessage">Loading...</div>
-    
-</head>
-
-<body onload="myFunction()" style="margin:0;">
-
-<div id="loader"></div>
-
-<div style="display:none;" id="myDiv" class="animate-bottom">
-
-  <script>
-    var myVar;
-    
-    function myFunction() {
-      myVar = setTimeout(showPage, 3000);
+    body {
+      margin: 0;
+      text-align: center !important;
     }
     
-    function showPage() {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("loadermessage").style.display = "none";  
-      document.getElementById("myDiv").style.display = "block";
-    }
-    </script>
+    </style>
+    
+       
+</head>
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
 
 
 
 <body>
+  <body>
+    <h1>Datascience: Project</h1>
+    <p>Simoni Mouzoura | Student number: 1937179</p>
 
-  
- 
+    <div class="navbuttons">
+     <button class="button" style="vertical-align:middle" onclick="location.href='https://simonimouzoura.github.io/'"><span> Portfolio </span></button>
+     <button class="button" style="vertical-align:middle" onclick="location.href='https://github.com/SimoniMouzoura/SimoniMouzoura.github.io'"><span>Github </span></button>
+     <button class="button" style="vertical-align:middle" onclick="location.href='https://rapidcharts.io/datascience'"><span>Course Site </span></button>
+     <button class="button" style="vertical-align:middle" onclick="location.href='sources.html'"><span>Page with Sources </span></button>
+    
+    
+<container>
+  <container class="container1">
+    <p class="bodyText"><span style="color: rgb(117, 3, 92); font-weight: 600; font: size 18px;"> Project looks at U.K cultural diversity
+      and government expenditure on education.
+      The aim is to see the effect of such expenditure and at the same time explore cultural diversity within the United Kingdom.</p>
+    
+  </container>
 
-<div style="margin-top:-10px;text-align:center !important;padding:1px 16px;">
+         
+  <container>
+    <container class="hcontainer">  
 
- <header>
- 
-  
-  <container class="hcontainer">
+       <!--Chart 1 -->
+        <p>Several measures of diversity exist and have been repeatedly explored in literature.
+        Such measures include the Ethnic Fractionalisation Index with several other divisions including the Ethnolingusitic Fr. Index.
+        For this project i have decided to focus on the measures of ethnicity,age profile and religion.
+        In addition, to measure the effect of government expenditure, school enrollment and education attainment data have been used.</p>
+        <p>The first graph concentrates on the ethnic mix of England and Wales. 
+          Due to the census that happens every 10 years, 
+          i was only able to find data in 2011.
+          2021 data have not yet been released and 2001 data would be outdated.</p>
+      <div class="chart" id="chart1">
+          <script>
+            var myChart1 = "chart1_ethnicgroup.json";
+            vegaEmbed('#chart1', myChart1);
+          </script>
+      </div>
 
-  <h1>Data<span style="color:purplered">Science</span></h1></span>
+      <!--Chart 2-->
+      
+    <div class="chart" id="chart2">
+     <script>
+       var myChart2 = "chart2_gvtexpeducation.json";
+       vegaEmbed('#chart2', myChart2);
+       </script>
+      </div>
+      <p>This chart allows us to observe the trend of government expenditure throughout the years. 
+        Missing values break the line but the trend is quite clear.
+        As we can see since 1999 there was an upward trend, spiking in 2011.
+      Since, the government has been spending less and less on education. </p>
 
-  <h2><b>by Simoni Mouzoura</b> </h2>
+    </container>
 
-  <p>
-    <a class="buttonActive" href="index.html"><i class="fas fa-chart-bar"></i> Portfolio</a>
-    <a class="button" href="project.html"><i class="fas fa-edit faa-edit animated-hover fa-4x" style="font-size: 1em;"></i> Project</a> 
-    <a class="button" href="https://github.com/SimoniMouzoura/SimoniMouzoura.github.io"><i class="fab fa-github faa-github animated-hover fa-4x" style="font-size: 1em;"></i> Github</a> 
-    <a class="button" href="https://rapidcharts.io/datascience"><i class="fas fa-book faa-book animated-hover fa-4x" style="font-size: 1em;"></i> Course</a>
+ <container>
+
+<!--Chart 3-->
+<p>As observed in the following chart,
+   the United Kingdom(GBR) is well above the OECD average(OAVG).
+   This means that the U.K has a higher level of 
+   population witb tertiary education than the 
+   average of the OECD countries. </p>
+        <div class="chart" id="chart3">
+          <script>
+            var myChart3 = "chart3_educattainment.json";
+            vegaEmbed('#chart3', myChart3);
+            </script>
+           </div>
+
+<!--Chart 4-->
+
+<div class="chart" id="chart4">
+  <script>
+    var myChart4 = "chart4_agebyethnicity.json";
+    vegaEmbed('#chart4', myChart4);
+    </script>
+   </div>
+
+   <p>Up until 2011, the age profile by ethnicity of the U.K looked a bit like this.
+    It can be observed that, in general, the highest concentration 
+    among ethnicities is found in the ages of 18 to 24, 
+    where they all experience a spike followed by a downwards trend.
   </p>
+  </container>
+
+  <container>
+<!--Chart 5-->
+
+<div class="chart" id="chart5">
+  <script>
+    var myChart5 = "chart5_religionmajorcities.json";
+    vegaEmbed('#chart5', myChart5);
+    </script>
+   </div>
+  </container>
+  <p>Another measure of diversity, apart from the age profile and ethnicity, is religion.
+     It is clear that the majority either believe in christianity or no religion at all.
+     For the creation of this chart i had to manipulate the data in order to be able to portray the information in this visualisation. 
+     This is because the information in the csv file was read as "string". 
+     I managed to transform it to "float" in python and thus be able to create this chart. The file can be found as a colab notebook </p>
+     <a class="textLink"
+     href="https://github.com/SimoniMouzoura/SimoniMouzoura.github.io/blob/main/project/data_chart5.ipynb"
+     style="color:rgb(124, 81, 134);">here</a></p>
+
+     <p class="bodyText"><span style="color: rgb(49, 6, 40); font-weight: 700; font: size 40px;">Conclusion</p>
+      
+<!--Chart 6-->
+
+<div class="chart" id="chart6">
+  <script>
+    var myChart6 = "chart6_regression.json";
+    vegaEmbed('#chart6', myChart6);
+    </script>
+   </div>
+
+   <p>By doing this regression we can observe that only 3% of the variation in school enrollment can be explained by spending on education by the government.
+    Such results may demonstrate that more needs to beinvested in the education sector, or that the money spend on education is not being used effectively. At the same time there can be
+    countless other variables not included in the regression that may affect this relationship. The aim of this project is not to establish causation
+    but to merely check if a correlation exists. In this case a relationship between these 2 variable does exist but
+  seems to be weak. </p>
+  </container>
+
+     
+   </html>
+
+
+
+     
+    
+   
+
+
+    
+
+
