@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Religion in major U.K cities ",
+    "subtitle": "Weighted in 2014 Source: ONS 2011 Annual Population Survey",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/project/religion_majorukcitiescorrect.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "bar", "size": 30, "clip": true},
+  "selection": {
+    "Region": {
+      "type": "single",
+      "fields": ["Local Authority"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Kent",
+          "Leeds",
+          "Surrey",
+          "Essex",
+          "Manchester",
+          "Sheffield",
+          "Glasgow City",
+          "Birmingham",
+          "Bristol",
+          "Cardiff"
+        ],
+        "labels": ["All"],
+        "name": "City"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "Region"}}],
+  "encoding": {
+    "x": {
+      "field": "Religion",
+      "type": "ordinal",
+      "scale": {
+        "domain": [
+          "No religion",
+          "Christian",
+          "Budhist",
+          "Hindu",
+          "Jewish",
+          "Muslim",
+          "Sikh",
+          "Other"
+        ]
+      },
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "scale": {"domain": [900, 5000000]},
+      "title": "",
+      "axis": {"grid": true, "format": "s"}
+    },
+    "color": {
+      "field": "Local Authority",
+      "type": "ordinal",
+      "legend": null,
+      "scale": {"scheme": "bluepurple"},
+      "title": null
+    }
+  },
+  "tooltip": [{"field": "Value", "title": "Value", "type": "quantitative"}],
+  "config": {
+    "background": "rgb(253, 242, 252)",
+    "view": {"stroke": "transparent"}
+  }
+}

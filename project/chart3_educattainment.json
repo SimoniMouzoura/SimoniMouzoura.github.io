@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Education attainment",
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/project/education_majorcountries.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": "Education attainment - population with tertiary education",
+    "subtitle": "25-34 year-olds(% in same age-group),  1981 – 2020 Source: OECD",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black",
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 280,
+  "background": "rgb(253, 242, 252)",
+  "mark": {"type": "area", "width": 20, "clip": true},
+  "selection": {
+    "Region": {
+      "type": "single",
+      "fields": ["LOCATION"],
+      "bind": {
+        "input": "select",
+        "options": [null, "GRC", "ITA", "GBR", "ESP", "OAVG"],
+        "labels": ["All"],
+        "name": "Country"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "Region"}}],
+  "encoding": {
+    "x": {
+      "field": "TIME",
+      "type": "temporal",
+      "title": "",
+      "axis": {"grid": false, "gridColor": "darkgrey"}
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": true, "gridColor": "darkgrey"},
+      "scale": {"domain": [0, 250]}
+    },
+    "color": {
+      "field": "LOCATION",
+      "type": "nominal",
+      "scale": {"scheme": "plasma"}
+    },
+    "tooltip": [{"field": "LOCATION"}, {"field": "Value"}]
+  },
+  "config": {}
+}

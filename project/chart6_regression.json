@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "",
+  "title": {
+    "text": "Government expenditure on education correlation with school enrollment",
+    "subtitle": "Source: WorldBank data",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black",
+    "subtitleColor": "black"
+  },
+  "config": {
+    "background": "rgb(253, 242, 252)",
+    "view": {"stroke": "transparent"}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/project/project_regression.csv"
+  },
+  "width": 390,
+  "height": 300,
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true, "color": "hotpink"},
+      "encoding": {
+        "x": {
+          "field": "gvtexp_educ",
+          "type": "quantitative",
+          "scale": {"domain": [3.5, 6.5]},
+          "title": "Expenditure on education(% of GDP)",
+          "axis": {
+            "grid": true,
+            "labelColor": "#5d4168",
+            "tickColor": "#5d4168",
+            "domainColor": "#5d4168"
+          }
+        },
+        "y": {
+          "field": "school_enrollment",
+          "type": "quantitative",
+          "scale": {"domain": [10, 75]},
+          "title": "School enrollment in tertiary education(%population)",
+          "axis": {
+            "grid": true,
+            "labelColor": "#5d4168",
+            "tickColor": "#5d4168",
+            "domainColor": "#5d4168"
+          }
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "legend": null,
+          "scale": {"scheme": "redpurple", "reverse": true}
+        },
+        "tooltip": {"field": "State", "type": "ordinal"}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "gray"},
+      "transform": [{"regression": "gvtexp_educ", "on": "school_enrollment"}],
+      "encoding": {
+        "x": {"field": "gvtexp_educ", "type": "quantitative"},
+        "y": {"field": "school_enrollment", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "gvtexp_educ",
+          "on": "school_enrollment",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "plum",
+        "x": "width",
+        "align": "center",
+        "y": -10
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+}

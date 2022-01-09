@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Multi-series Line Chart with Halo. Use pivot and repeat-layer as a workaround to facet groups of lines and their halo strokes. See https://github.com/vega/vega-lite/issues/6192 for more discussion.",
+  "title": {
+    "text": "Age profile by ethnicity",
+    "subtitle": "% of people within each broad ethnic group that fall into each age group Source : gov.uk",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 590,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/project/agebyethnicity.csv"
+  },
+  "transform": [{"pivot": "Ethnicity", "value": "Value", "groupby": ["Age"]}],
+  "repeat": {"layer": ["All", "Asian", "Black", "Mixed", "Other", "White"]},
+  "spec": {
+    "layer": [
+      {
+        "mark": {
+          "type": "line",
+          "stroke": "white",
+          "point": false,
+          "strokeWidth": 2.75
+        },
+        "encoding": {
+          "x": {"field": "Age", "type": "nominal"},
+          "y": {
+            "field": {"repeat": "layer"},
+            "type": "quantitative",
+            "title": ""
+          }
+        }
+      },
+      {
+        "mark": {"type": "line", "clip": true},
+        "encoding": {
+          "x": {"field": "Age", "title": null, "type": "nominal"},
+          "y": {
+            "field": {"repeat": "layer"},
+            "scale": {"domain": [0, 20]},
+            "type": "quantitative",
+            "title": "% of people"
+          },
+          "stroke": {"datum": {"repeat": "layer"}, "type": "nominal"}
+        }
+      }
+    ]
+  },
+  "config": {
+    "background": "rgb(253, 242, 252)",
+    "view": {"stroke": "transparent"}
+  }
+}

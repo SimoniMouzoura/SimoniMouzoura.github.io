@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ethnic group mix in England and Wales 2011 ",
+    "subtitle": "Population demographic as a % of an ethnic group Source: ONS 2011 Census",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/SimoniMouzoura/SimoniMouzoura.github.io/main/project/ethnicgroupmix_uk.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Ethnic group",
+        "oneOf": [
+          "Bangladeshi",
+          "Chinese",
+          "Pakistani",
+          "Indian",
+          "Other Asian",
+          "Black African",
+          "Black Carribean",
+          "Other Black"
+        ]
+      }
+    }
+  ],
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "bar", "clip": true, "point": "transparent"},
+  "encoding": {
+    "x": {
+      "field": "Ethnic group",
+      "type": "ordinal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "size": {"legend": null, "scale": {"range": [0, 50]}},
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "% of ethnic mix",
+      "axis": {"grid": true}
+    },
+    "color": {
+      "field": "Ethnic group",
+      "type": "nominal",
+      "legend": null,
+      "scale": {"scheme": "purplered"},
+      "title": null
+    }
+  },
+  "config": {
+    "background": "rgb(253, 242, 252)",
+    "view": {"stroke": "transparent"}
+  }
+}
